@@ -1,0 +1,9 @@
+---
+description: UX screenshots use PNG; use Bills_Main.png when Bills_Main.jpg is mentioned
+alwaysApply: true
+---
+
+# UX reference assets
+
+- The Bills main screen design reference is **`Bills_Main.png`** (typically under `UX_Reference` or the project’s reference image folder).
+- Whenever **`Bills_Main.jpg`** or another **`.jpg`** path is mentioned for a UX/screenshot asset, **fall back to the same basename with `.png`** (e.g. `Bills_Main.png`) and use that file if present.
