@@ -12,6 +12,9 @@ struct Theme {
     static let glassOpacity: Double = 0.7
     static let glassBlur: CGFloat = 15
     
+    /// Horizontal inset for the sliding pill inside the floating nav capsule.
+    static let navBarInnerInset: CGFloat = 4
+    
     struct ShadowConfig {
         let color: Color
         let radius: CGFloat
@@ -30,6 +33,44 @@ extension View {
                     .stroke(.white.opacity(0.4), lineWidth: 0.5)
             )
             .shadow(color: Theme.cardShadow.color, radius: Theme.cardShadow.radius, x: Theme.cardShadow.x, y: Theme.cardShadow.y)
+    }
+    
+    /// Floating bottom nav: pill-shaped glass with specular edge and soft lift shadow.
+    func liquidGlassCapsuleNavBar() -> some View {
+        self
+            .background(.ultraThinMaterial, in: Capsule())
+            .overlay(
+                Capsule()
+                    .stroke(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(0.72),
+                                Color.white.opacity(0.18),
+                                Color.white.opacity(0.42),
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: 1
+                    )
+            )
+            .overlay(
+                Capsule()
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(0.22),
+                                Color.clear,
+                            ],
+                            startPoint: .top,
+                            endPoint: .center
+                        )
+                    )
+                    .blendMode(.plusLighter)
+                    .padding(1)
+            )
+            .shadow(color: Color.black.opacity(0.12), radius: 18, x: 0, y: 10)
+            .shadow(color: Color.black.opacity(0.06), radius: 3, x: 0, y: 1)
     }
     
     func standardCard() -> some View {

@@ -1,42 +1,28 @@
-# 🚀 Project: Bills & Balance (3-Day Sprint)
+# 🚀 Project: Bills & Balance (Day 2 In Progress)
 
 ## 🔄 Current Agent State
-- **Last Sync:** March 23, 2026
-- **Database Status:** SQL Schema Deployed (Accounts, Bills, Transactions, Categories)
-- **Active Service:** EmailService (Weekly Financial Snapshot automation)
-- **Latest Update:** Added `scripts/test-weekly-snapshot-email.sh` to verify Resend weekly snapshot HTML (curl + JSON payload)
+- **Last Sync:** 2026-03-23T20:11 local — Liquid Glass capsule nav shipped; build verified (`xcodebuild`).
+- **Git Status:** Atomic commits per checklist; sync file updated with each completed `[x]`.
+- **Environment:** Xcode Project builds to physical iPhone; `Secrets.xcconfig` active.
+- **Database:** Supabase Schema Deployed; `DatabaseManager` & `LedgerService` verified.
+- **Next `[ ]` priority:** Overhaul BillsView with `Theme.swift` card depth (no default Lists).
 
-## 🛠 Environment Status
-- [x] Xcode Project Created
-- [x] Secrets.xcconfig Verified
-- [x] Physical Device Deployment Successful
-- [x] UX_Reference Folder (10 Images) Ready — primary Bills screen ref: **`Bills_Main.png`** (if `.jpg` is mentioned, use the same-named **`.png`**)
-- [ ] UI: Main Navigation & Bills View (Current Goal)
+## ✅ Completed (Sprint 1)
+- [x] Database Schema & RLS Policies.
+- [x] LedgerService (Bill-to-Transaction sync).
+- [x] Bitcoin Mode (CoreMotion Shake + SwiftUI Coin Rain).
+- [x] Resend API Integration (`EmailService.swift` + Weekly Snapshot script).
+- [x] Theme System (`Theme.swift` with Liquid Glass card styles).
 
-## ✅ Completed (Built in Sprint 1)
-- [x] Database Schema & RLS Policies
-- [x] LedgerService with Bill-to-Transaction sync
-- [x] Bitcoin Mode: CoreMotion Shake + SwiftUI Coin Rain
-- [x] Resend API Integration (EmailService.swift)
+## 📋 TODO: Day 2 (High Priority)
+- [x] **UI:** Implement Floating "Liquid Glass" Capsule Nav Bar (MainContainerView).
+- [ ] **UI:** Overhaul BillsView with `Theme.swift` card depth (No default Lists).
+- [ ] **Feature:** Build `BalanceView` Account Grid (Checking, Savings, BTC).
+- [ ] **Feature:** Multi-Select & Two-finger drag gesture for Transaction Ledger.
+- [ ] **Hardening:** Move Ledger logic to Supabase RPC for atomic writes.
 
-## 🚧 High Priority: Hardening (Next 24 Hours)
-- [ ] **Atomic Sync:** Move Ledger logic to Supabase RPC to prevent partial data writes.
-- [ ] **Auth Flow:** Connect Supabase Auth to the `EmailService` to send the "Welcome" email on sign-up.
-- [ ] **Haptics:** Verify `UIImpactFeedbackGenerator` is firing on the Bitcoin shake and the Bill toggle.
-
-## 📅 Upcoming: UI & Calendar
-- [ ] Floating Nav Bar implementation (Bills, Balance, Calendar).
-- [ ] Calendar Grid with "Due Date" dots.
-- [ ] Landscape Split-View for Calendar.
-
-## 📋 Project TODO List (Automated)
-- [ ] **UI:** Implement Floating Nav Bar (Bills, Balance, Calendar)
-- [ ] **Feature:** Shake for Bitcoin Mode (CoreMotion + CoinGecko)
-- [ ] **Feature:** Two-finger drag multi-select in Balance Ledger
-- [ ] **Integration:** Resend API Welcome Email on Sign-up
-- [ ] **Polish:** Haptic Feedback on all Swipe/Button actions
-
-## 🛠 Tech Stack Details
-- **Supabase:** Auth + DB (RLS Enabled)
-- **Currency:** USD & BTC (Sats format)
-- **Architecture:** MVVM-S (Model-View-ViewModel-Service)
+## 🛠 Tech Stack & Rules
+- **Stack:** SwiftUI (MVVM-S), Supabase, Resend, CoinGecko.
+- **Rule 1:** READ this file before every task.
+- **Rule 2:** PERFORM an atomic git commit after every [x] update.
+- **Rule 3:** Reference `UX_Reference` images for all UI tasks.
