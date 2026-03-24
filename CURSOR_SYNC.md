@@ -1,7 +1,7 @@
 # 🚀 Project: Bills & Balance (Day 2 In Progress)
 
 ## 🔄 Current Agent State
-- **Last Sync:** 2026-03-23T20:11 local — Liquid Glass capsule nav shipped; build verified (`xcodebuild`).
+- **Last Sync:** 2026-03-23 — Removed duplicate `BillsBalance/CURSOR_SYNC.md`; **canonical sprint file is this file at repo root only.**
 - **Git Status:** Atomic commits per checklist; sync file updated with each completed `[x]`.
 - **Environment:** Xcode Project builds to physical iPhone; `Secrets.xcconfig` active.
 - **Database:** Supabase Schema Deployed; `DatabaseManager` & `LedgerService` verified.
@@ -23,6 +23,6 @@
 
 ## 🛠 Tech Stack & Rules
 - **Stack:** SwiftUI (MVVM-S), Supabase, Resend, CoinGecko.
-- **Rule 1:** READ this file before every task.
+- **Rule 1:** READ this file before every task (only `CURSOR_SYNC.md` at repository root — do not add copies under subfolders).
 - **Rule 2:** PERFORM an atomic git commit after every [x] update.
 - **Rule 3:** Reference `UX_Reference` images for all UI tasks.
